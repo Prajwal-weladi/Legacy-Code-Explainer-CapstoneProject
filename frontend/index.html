@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legacy Code Explainer - FastAPI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🔧 Legacy Code Explainer</h1>
+                <p class="subtitle">AI-Powered COBOL/JCL Analysis with Ollama</p>
+            </div>
+            <div class="header-actions">
+                <button id="healthBtn" class="btn-secondary">Check Status</button>
+                <a href="/docs" target="_blank" class="btn-secondary">API Docs</a>
+            </div>
+        </header>
+
+        <!-- Health Status -->
+        <div id="healthStatus" class="health-status hidden">
+            <div class="health-content"></div>
+        </div>
+
+        <!-- Upload Section -->
+        <div class="upload-section">
+            <div class="upload-card">
+                <div class="upload-icon">📁</div>
+                <h2>Upload Legacy Code</h2>
+                <p>Supported formats: .cbl, .cob, .jcl, .txt</p>
+                
+                <input type="file" id="fileInput" accept=".cbl,.cob,.jcl,.txt" hidden>
+                <button id="uploadBtn" class="btn-primary">Choose File</button>
+                
+                <div id="fileInfo" class="file-info hidden">
+                    <span class="file-name"></span>
+                    <span class="file-size"></span>
+                </div>
+            </div>
+
+            <button id="analyzeBtn" class="btn-analyze" disabled>
+                <span>🚀 Analyze Code</span>
+            </button>
+        </div>
+
+        <!-- Progress Indicator -->
+        <div id="progress" class="progress-section hidden">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <p class="progress-text">Processing...</p>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results" class="results-section hidden">
+            <!-- Summary Card -->
+            <div class="result-card summary-card">
+                <div class="card-header">
+                    <h3>📊 Analysis Summary</h3>
+                    <span class="processing-time"></span>
+                </div>
+                <div class="card-body">
+                    <div class="summary-grid">
+                        <div class="summary-item">
+                            <span class="label">File</span>
+                            <span class="value" id="fileName"></span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">Type</span>
+                            <span class="value" id="codeType"></span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">Complexity</span>
+                            <span class="value complexity" id="complexity"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics -->
+            <div class="result-card">
+                <div class="card-header">
+                    <h3>📈 Code Statistics</h3>
+                </div>
+                <div class="card-body">
+                    <div id="statistics" class="stats-grid"></div>
+                </div>
+            </div>
+
+            <!-- AI Explanation -->
+            <div class="result-card explanation-card">
+                <div class="card-header">
+                    <h3>🤖 AI Explanation</h3>
+                    <span class="badge">Powered by Ollama</span>
+                </div>
+                <div class="card-body">
+                    <div class="explanation-section">
+                        <h4>Summary</h4>
+                        <p id="expSummary"></p>
+                    </div>
+                    <div class="explanation-section">
+                        <h4>Business Logic</h4>
+                        <p id="expBusinessLogic"></p>
+                    </div>
+                    <div class="explanation-section">
+                        <h4>Technical Details</h4>
+                        <div id="expTechnicalDetails" class="technical-details"></div>
+                    </div>
+                    <div class="explanation-section">
+                        <h4>Modernization Suggestions</h4>
+                        <ul id="expModernization" class="modernization-list"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parsed Structure -->
+            <div class="result-card">
+                <div class="card-header">
+                    <h3>🔍 Parsed Structure</h3>
+                    <button id="downloadBtn" class="btn-download">Download JSON</button>
+                </div>
+                <div class="card-body">
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="metadata">Metadata</button>
+                        <button class="tab-btn" data-tab="variables">Variables</button>
+                        <button class="tab-btn" data-tab="procedures">Procedures</button>
+                        <button class="tab-btn" data-tab="raw">Raw JSON</button>
+                    </div>
+                    <div class="tab-content">
+                        <div id="tab-metadata" class="tab-pane active"></div>
+                        <div id="tab-variables" class="tab-pane"></div>
+                        <div id="tab-procedures" class="tab-pane"></div>
+                        <div id="tab-raw" class="tab-pane">
+                            <pre id="rawJson"></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button id="newAnalysisBtn" class="btn-secondary">New Analysis</button>
+                <button id="exportReportBtn" class="btn-primary">Export Full Report</button>
+            </div>
+        </div>
+
+        <!-- Error Display -->
+        <div id="error" class="error-section hidden">
+            <div class="error-content">
+                <span class="error-icon">⚠️</span>
+                <div>
+                    <h4>Error</h4>
+                    <p class="error-message"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Built with FastAPI + Ollama | <a href="/docs" target="_blank">API Documentation</a></p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
