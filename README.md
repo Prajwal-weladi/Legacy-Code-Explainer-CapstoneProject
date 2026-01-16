@@ -30,7 +30,6 @@ Legacy Code Explainer transforms complex legacy code into human-readable explana
 ✅ **Production Ready**
 - 97% code coverage with 94 tests
 - Async/await support
-- MongoDB caching support
 - CORS enabled
 - Error handling and recovery
 
@@ -74,9 +73,6 @@ Create `.env` file in backend directory:
 OLLAMA_HOST=http://localhost:11434
 OLLAMA_MODEL=codellama
 OLLAMA_TIMEOUT=120
-MONGODB_URL=mongodb://localhost:27017
-MONGODB_DB_NAME=legacy_code_db
-CACHE_ENABLED=true
 ```
 
 ### 5. Start Ollama (in separate terminal)
@@ -302,14 +298,6 @@ OLLAMA_TIMEOUT=120                          # Request timeout (seconds)
 # File Upload
 MAX_FILE_SIZE=5242880                       # 5MB in bytes
 ALLOWED_EXTENSIONS=cbl,cob,jcl,txt         # Allowed file types
-
-# MongoDB
-MONGODB_URL=mongodb://localhost:27017       # MongoDB connection
-MONGODB_DB_NAME=legacy_code_db             # Database name
-
-# Cache
-CACHE_ENABLED=true                          # Enable caching
-CACHE_TTL_DAYS=30                          # Cache TTL
 
 # CORS
 CORS_ORIGIN=*                              # CORS allowed origins

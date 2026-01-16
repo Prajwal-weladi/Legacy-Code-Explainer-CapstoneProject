@@ -19,11 +19,6 @@ class Settings(BaseSettings):
 
     cors_origin: list = ["*"]
 
-    mongodb_url: str = "mongodb://localhost:27017"
-    mongodb_db_name: str = "legacy_code_db"
-    cache_enabled: bool = True
-    cache_ttl_days: int = 30
-
     class Config:
         env_file = ".env"
         case_sensitive = False

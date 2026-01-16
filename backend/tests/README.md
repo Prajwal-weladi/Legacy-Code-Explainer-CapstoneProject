@@ -193,7 +193,7 @@ Some tests use mocking for external services (Ollama). Ensure `unittest.mock` is
 
 1. **Test Independence**: Each test is independent and can run in any order
 2. **Fixtures**: Reusable test data and mocks defined in conftest.py
-3. **Mocking**: External services (Ollama, MongoDB) are mocked
+3. **Mocking**: External services (Ollama) are mocked
 4. **Documentation**: Each test has a docstring explaining what it tests
 5. **Assertions**: Clear, specific assertions for easier debugging
 6. **Names**: Descriptive test names that explain the scenario

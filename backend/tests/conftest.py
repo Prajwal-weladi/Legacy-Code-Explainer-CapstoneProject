@@ -36,11 +36,7 @@ def mock_settings(temp_dir):
         ollama_timeout=120,
         max_file_size=5 * 1024 * 1024,
         allowed_extensions={"cbl", "cob", "jcl", "txt"},
-        cors_origin=["*"],
-        mongodb_url="mongodb://localhost:27017",
-        mongodb_db_name="test_db",
-        cache_enabled=True,
-        cache_ttl_days=30
+        cors_origin=["*"]
     )
 
 

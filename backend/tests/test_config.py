@@ -31,16 +31,6 @@ class TestSettings:
         """Test max file size configuration"""
         assert mock_settings.max_file_size == 5 * 1024 * 1024
     
-    def test_settings_cache_configuration(self, mock_settings):
-        """Test cache settings"""
-        assert mock_settings.cache_enabled is True
-        assert mock_settings.cache_ttl_days == 30
-    
-    def test_settings_mongodb_configuration(self, mock_settings):
-        """Test MongoDB settings"""
-        assert mock_settings.mongodb_url == "mongodb://localhost:27017"
-        assert mock_settings.mongodb_db_name == "test_db"
-    
     def test_settings_cors_origins(self, mock_settings):
         """Test CORS origins"""
         assert "*" in mock_settings.cors_origin

@@ -87,7 +87,7 @@ Be concise."""
             return [
                 "Migrate to Java/Python with business logic preservation",
                 "Implement microservices architecture",
-                "Use modern databases (PostgreSQL, MongoDB)",
+                "Use modern databases (PostgreSQL)",
                 "Add REST APIs for integration"
             ]
         else:  # JCL
