@@ -12,20 +12,20 @@ from services.llm_service import OllamaService
 async def lifespan(app: FastAPI):
     """Startup and shutdown events"""
     # Startup
-    print("🚀 Legacy Code Explainer Starting...")
-    print(f"📡 Ollama Host: {settings.ollama_host}")
-    print(f"🤖 Ollama Model: {settings.ollama_model}")
+    print("Legacy Code Explainer Starting...")
+    print(f"Ollama Host: {settings.ollama_host}")
+    print(f"Ollama Model: {settings.ollama_model}")
     
     ollama = OllamaService()
     if await ollama.is_available():
-        print("✅ Ollama is running!")
+        print("Ollama is running!")
     else:
-        print("⚠️  Warning: Ollama is not running. Start it with 'ollama serve'")
+        print("Warning: Ollama is not running. Start it with 'ollama serve'")
     
     yield
     
     # Shutdown
-    print("👋 Shutting down...")
+    print("Shutting down...")
 
 # Create FastAPI app
 app = FastAPI(
