@@ -9,3 +9,8 @@ pydantic
 pydantic-settings
 
 python-dotenv
+
+# Testing and Coverage
+pytest
+pytest-asyncio
+pytest-cov
